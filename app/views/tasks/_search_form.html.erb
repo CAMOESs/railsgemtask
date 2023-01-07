@@ -8,7 +8,7 @@
     <%= f.date_field :deadline_lteq %>
     <%= f.label :status %>
     
-    <%= radio_button_tag :status_eq,'' %> 指定なし
+    <%= radio_button_tag :status_eq,'', checked_value: "yes" %> 指定なし
     <%= radio_button_tag :status_eq, 'todo'%> todo
     <%= radio_button_tag :status_eq,'doing' %> doing 
     <%= radio_button_tag :status_eq,'done' %> done 
