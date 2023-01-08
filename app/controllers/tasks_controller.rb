@@ -10,6 +10,8 @@ class TasksController < ApplicationController
       @tasks = Task.ransack(status_eq: 0).result
     elsif params[:status_eq] == "doing"
       @tasks = Task.ransack(status_eq: 1).result
+    elsif params[:status_eq] == " "
+      @tasks = Task.all
     elsif params[:status_eq] == "done"
       @tasks = Task.ransack(status_eq: 2).result
     end
