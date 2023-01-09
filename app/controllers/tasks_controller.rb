@@ -16,7 +16,7 @@ class TasksController < ApplicationController
     #  @tasks = Task.all
     #elsif params[:status_eq] == "done"
     #  @tasks = Task.ransack(status_eq: 2).result
-    end
+    #end
     #@q = Task.ransack(status_eq: params[:q][:status]).result.to_sql
     #@tasks = Task.ransack(status_eq: params[:q][:status]).result.to_sql
     #puts params[:q][:status]
