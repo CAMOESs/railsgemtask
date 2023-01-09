@@ -9,6 +9,10 @@
     <%= f.date_field :deadline_lteq %>
 
 
-    
+    <%= f.label :status %>
+    <%= f.radio_button :status, '', :checked => true %>指定なし
+    <%= f.radio_button :status, 'todo' %>todo
+    <%= f.radio_button :status, 'doing' %>doing
+    <%= f.radio_button :status, 'done'  %>done
     <%= f.submit "search"%> 
 <% end %>
