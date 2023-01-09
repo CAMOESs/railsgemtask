@@ -5,9 +5,11 @@ class TasksController < ApplicationController
   def index
     #@tasks = Task.all
     @q = Task.ransack(params[:q])
-    @tasks = @q.result(distinct: true)
-    if params[:status_eq] == "todo"
+    @tasks = @q.result(distinct: true) 
+    if params[:q][:status] == "todo" 
       @tasks = Task.ransack(status_eq: 0).result
+    elsif params[:status_eq] == "todo" && params[:q]
+      @tasks = Task.ransack(params[:q] ,status_eq: 0).result
     elsif params[:status_eq] == "doing"
       @tasks = Task.ransack(status_eq: 1).result
     elsif params[:status_eq] == " "

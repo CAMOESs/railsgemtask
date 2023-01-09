@@ -1,13 +1,21 @@
 <%= search_form_for @q do |f| %>
     <%= params[:status_eq] %>
+    <%= params[:q] %>
     <%= f.label :title %>
     <%= f.search_field :title_or_description_cont %>
     <%= f.label :deadline %>
     <%= f.date_field :deadline_gteq %>
     ~
     <%= f.date_field :deadline_lteq %>
+
+    <%= f.check_box :status %>lol
+    <%= f.radio_button :status, '', :checked => true %>
+    <%= f.radio_button :status, 'todo' %>
+    <%= f.radio_button :status, 'doing' %>
+    <%= f.radio_button :status, 'done'  %>
+
+
     <%= f.label :status %>
-    
     <%= radio_button_tag :status_eq,'', checked_value: "yes" %> 指定なし
     <%= radio_button_tag :status_eq, 'todo'%> todo
     <%= radio_button_tag :status_eq,'doing' %> doing 
