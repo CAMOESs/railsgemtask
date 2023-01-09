@@ -8,17 +8,12 @@
     ~
     <%= f.date_field :deadline_lteq %>
 
-    <%= f.check_box :status %>lol
-    <%= f.radio_button :status, '', :checked => true %>
-    <%= f.radio_button :status, 'todo' %>
-    <%= f.radio_button :status, 'doing' %>
-    <%= f.radio_button :status, 'done'  %>
+    <%= f.check_box :status %>指定なし
+    <%= f.radio_button :status, '', :checked => true %>指定なし
+    <%= f.radio_button :status, 'todo' %>todo
+    <%= f.radio_button :status, 'doing' %>doing
+    <%= f.radio_button :status, 'done'  %>done
 
 
     <%= f.label :status %>
-    <%= radio_button_tag :status_eq,'', checked_value: "yes" %> 指定なし
-    <%= radio_button_tag :status_eq, 'todo'%> todo
-    <%= radio_button_tag :status_eq,'doing' %> doing 
-    <%= radio_button_tag :status_eq,'done' %> done 
-    <%= f.submit "search"%> 
 <% end %>
